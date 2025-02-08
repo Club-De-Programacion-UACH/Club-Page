@@ -56,9 +56,9 @@ form {
 
 @media (max-width: 600px) {
     .schedule-gen-table {
-        margin: 2% 5%;
+        margin: 10% 5%;
         font-family: monospace;
         font-weight: bold;
-        font-size: medium;
+        font-size:small;
     }
 }

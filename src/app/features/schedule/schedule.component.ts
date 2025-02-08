@@ -19,16 +19,20 @@ export class ScheduleComponent {
     viernes: new Set(),
 };
 
-hours: string[] = this.generateHours();
+hours: string[] = [];
 
 formData: { [key: string]: any } = {};
 
-generateHours(): string[] {
-    const hours = [];
-    for (let i = 8; i <= 16; i++) {
-        hours.push(`${i}:00`);
+constructor() {
+    this.generateHours();
+}
+
+generateHours() {
+    const startHour = 8; // Hora de inicio
+    const endHour = 18; // Hora de fin
+    for (let hour = startHour; hour < endHour; hour++) {
+        this.hours.push(`${hour}:00 - ${hour + 1}:00`);
     }
-    return hours;
 }
 
 toggleSelection(day: string, hour: string) {
@@ -53,7 +57,7 @@ onSubmit(event: Event) {
 
 exportToExcel(data: { [key: string]: Set<string> }) {
     // Crear un arreglo de horas del rango 8 a 16
-    const hoursRange = this.generateHours(); // Asegúrate de que este método esté disponible
+    const hoursRange = this.hours; // Asegúrate de que este método esté disponible
 
     // Crear un arreglo para almacenar los datos
     const dataArray = [];
