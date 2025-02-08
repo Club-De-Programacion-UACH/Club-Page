@@ -1,6 +1,22 @@
-div {
+.page-contact {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    border-radius: 3%;
+}
+
+.qr-club-contact {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color:forestgreen;
+    margin-top: 20px;
+    margin-right: 10px;
+    border-radius: 2%;
+    padding: 20px;
+    padding-bottom: 60px;
 }

@@ -1,24 +1,42 @@
-nav {
-    border-radius: 10px;
-}
-
 div {
     display: flex;
     align-items: center;
 }
-.navbar {
-    background: linear-gradient(to right, rgb(223, 223, 223), rgb(134, 134, 134));
-    margin: auto;
+.navbar-logo {
+    align-items: center;
+    justify-content: center;
+    padding-left: 3%;
 }
+.navbar-links {
+    
+}
+
+.navbar {
+    background-color: white;
+}
+img {
+    width: 50%;
+}
+
 .link {
-    padding: 5px;
-    margin: 5px 15px;
+    padding: 5px 20px;
     font-size: x-large;
     font-weight: bold;
     color: black;
     text-decoration: none;
+    background-color: white;
+    border-radius: 2%;
+    border: 2px solid gray;
+    margin-right: 20px;
 }
 
-a:hover {
+.link:hover {
     color: #7b0086;
+    border: 2px solid #7b0086;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
