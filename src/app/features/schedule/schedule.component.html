@@ -1,28 +1,39 @@
-<form (ngSubmit)="onSubmit($event)">
-    <table style="table-layout: fixed; width: 100%; background-color: #ffffff;">
-        <thead>
-            <tr>
-                <th>Hora</th>
-                <th>Lunes</th>
-                <th>Martes</th>
-                <th>Miércoles</th>
-                <th>Jueves</th>
-                <th>Viernes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let hour of hours">
-                <td>{{ hour }}</td>
-                <td (click)="toggleSelection('lunes', hour)" [class.selected]="isSelected('lunes', hour)"></td>
-                <td (click)="toggleSelection('martes', hour)" [class.selected]="isSelected('martes', hour)"></td>
-                <td (click)="toggleSelection('miercoles', hour)" [class.selected]="isSelected('miercoles', hour)"></td>
-                <td (click)="toggleSelection('jueves', hour)" [class.selected]="isSelected('jueves', hour)"></td>
-                <td (click)="toggleSelection('viernes', hour)" [class.selected]="isSelected('viernes', hour)"></td>
-            </tr>
-        </tbody>
-    </table>
-    <input type="button" value="Enviar" (click)="onSubmit($event)">
-</form>
+<div class="schedule">
+    <div class="schedule-info"> 
+        <h1>
+            ¡Gracias 🧡 por tu apoyo!
+        </h1>
+        <h2>A continuación selecciona las celdas con tus horas libres, se descargara un excel con tu disponibilidad, por favor mandalo a nuestro correo <span style="color: purple;">clubprog&#64;uach.mx</span>.</h2>
+    </div>
+    <form class="schedule-gen-table" (ngSubmit)="onSubmit($event)" style="display: flex; flex-direction: column; align-items: center;">
+        <table class="schedule-table">
+            <thead>
+                <tr class="head-cell">
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let hour of hours" >
+                    <td class="hour-cell">{{ hour }}</td>
+                    <td class="cell" (click)="toggleSelection('lunes', hour)" [class.selected]="isSelected('lunes', hour)"></td>
+                    <td class="cell" (click)="toggleSelection('martes', hour)" [class.selected]="isSelected('martes', hour)"></td>
+                    <td class="cell" (click)="toggleSelection('miercoles', hour)" [class.selected]="isSelected('miercoles', hour)"></td>
+                    <td class="cell" (click)="toggleSelection('jueves', hour)" [class.selected]="isSelected('jueves', hour)"></td>
+                    <td class="cell" (click)="toggleSelection('viernes', hour)" [class.selected]="isSelected('viernes', hour)"></td>
+                </tr>
+            </tbody>
+        </table>            
+            <button (click)="onSubmit($event)" class="schedule-button" style="display: flex; align-items: center;">
+                <i class="material-icons">arrow_circle_down</i>
+                <span style="margin: 0 10px;">Descargar horario</span>
+            </button>
+    </form>
+</div>
 
 <style>
     .selected {
